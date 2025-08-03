@@ -6,19 +6,17 @@ from qdrant_client.http import models
 from google import genai
 from google.genai import types
 from together import Together
-from dotenv import load_dotenv
 
-load_dotenv()
 
 # ---------------------
 # Environment Setup
 # ---------------------
-google_api_key = os.getenv('google_api_key')
-qdrant_api_key = os.getenv('qdrant_api_key')
-together_api_key = os.getenv('toghether_api_key')
+google_api_key = st.secrets['google_api_key']
+qdrant_api_key = st.secrets['qdrant_api_key']
+together_api_key = st.secrets['together_api_key']
 
 # Qdrant Configuration
-QDRANT_URL = os.getenv('QDRANT_URL')
+QDRANT_URL = st.secrets['QDRANT_URL']
 COLLECTION_NAME = "RAG_Skincare"
 EMBEDDING_MODEL = "text-embedding-004"
 
